@@ -1,7 +1,6 @@
 def fatorial(numero):
     if numero == 0:
         return 1
-
     valor = numero
     for _ in range(1, numero):
         valor *= numero - 1
@@ -24,3 +23,28 @@ def cosseno(grau, termos):
         cosseno += termos
     return cosseno
 
+def seno(x, termos=10):
+    soma = 0
+    for n in range(termos):
+        numerador = (-1)**n * x**(2*n + 1)
+        denominador = fatorial(2*n + 1)
+        soma += numerador / denominador
+    return soma
+
+
+while True:
+    try:
+        angulo = float(input("Digite o ângulo em graus: "))
+        
+        rad = ang_radiano(angulo)
+        resultado = seno(rad)
+
+        print(f"\nO seno de {angulo}° é aproximadamente: {resultado:.6f}\n")
+
+        opcao = input("Deseja calcular outro ângulo? (s/n): ").lower()
+        if opcao != 's':
+            print("Programa encerrado.")
+            break
+
+    except ValueError:
+        print("Por favor, digite um número válido.\n")
