@@ -1,13 +1,11 @@
-def calcular_e(termos):
-    e = 0
-    fatorial = 1
+def numero_e(termo):
+    soma = 0
+    fat = 1 # fatorial tem que ser difrente de 0
 
-    for n in range(termos):
-        if n > 0:
-            fatorial *= n
-        e += 1 / fatorial
+    #fatorial
+    for n in range(termo):
+        if n >0:
+            fat *= n
+        soma += 1/fat
+    return soma
 
-    return e
-
-
-print(calcular_e(15))
